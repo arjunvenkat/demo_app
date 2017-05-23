@@ -1,0 +1,17 @@
+<h1>New Student</h1>
+
+<%= form_tag(students_url, method: 'post') do %>
+  <div>
+    <%= label_tag :name %><br />
+    <%= text_field_tag :name %>
+  </div>
+
+  <div>
+    <%= label_tag :image %><br />
+    <%= text_field_tag :image %>
+  </div>
+
+  <div>
+    <%= submit_tag "Create Student" %>
+  </div>
+<% end %>

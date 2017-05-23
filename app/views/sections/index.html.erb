@@ -1,0 +1,28 @@
+<h1>Sections</h1>
+
+<p><%= link_to 'Add a New Section', new_section_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @sections.each do |section| %>
+    <tr>
+      <td><%= section.name %></td>
+      <td><%= section.date %></td>
+      <td><%= link_to 'Show', section_url(section) %></td>
+      <td><%= link_to 'Edit', edit_section_url(section) %></td>
+      <td><%= link_to 'Destroy', section_url(section), method: 'delete', data: { confirm: "Do you really want to delete this section?" } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

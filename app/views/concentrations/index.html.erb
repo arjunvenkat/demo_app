@@ -1,0 +1,26 @@
+<h1>Concentrations</h1>
+
+<p><%= link_to 'Add a New Concentration', new_concentration_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @concentrations.each do |concentration| %>
+    <tr>
+      <td><%= concentration.name %></td>
+      <td><%= link_to 'Show', concentration_url(concentration) %></td>
+      <td><%= link_to 'Edit', edit_concentration_url(concentration) %></td>
+      <td><%= link_to 'Destroy', concentration_url(concentration), method: 'delete', data: { confirm: "Do you really want to delete this concentration?" } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
